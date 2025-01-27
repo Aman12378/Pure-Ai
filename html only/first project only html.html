@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first project </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+<body>
+    <!-- nav bar here -->
+    <nav>
+        <div class="logo">
+            <h1>Aman Garage</h1>
+        </div>
+        <ul>
+            <li><a href="first project only html.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+        <!-- Image Carousel -->
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="image1.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="image2.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="image3.jpg" alt="Image 3">
+                </div>
+            </div>
+            <a class="carousel-control prev" onclick="prevSlide()">&#10094;</a>
+            <a class="carousel-control next" onclick="nextSlide()">&#10095;</a>
+        </div>
+
+            <!-- Content Section -->
+    <section class="content">
+        <h2>Welcome to Our Car Garage</h2>
+        <p>At our car garage, we are passionate about cars and dedicated to providing the best services to keep your vehicle in top condition. Whether you need routine maintenance, repairs, or a complete overhaul, our team of experienced technicians is here to help.</p>
+        
+        <h3>Our Services</h3>
+        <ul>
+            <li>Oil Change</li>
+            <li>Tire Rotation</li>
+            <li>Brake Inspection</li>
+            <li>Car Wash</li>
+            <li>Engine Diagnostics</li>
+        </ul>
+        
+        <h3>Why Choose Us?</h3>
+        <p>We understand that your car is more than just a mode of transportation; it's a part of your life. That's why we strive to provide exceptional service and care for every vehicle that comes through our doors. Here are a few reasons to choose us:</p>
+        <ul>
+            <li>Experienced and certified technicians</li>
+            <li>State-of-the-art equipment</li>
+            <li>Competitive pricing</li>
+            <li>Friendly and professional service</li>
+            <li>Convenient location</li>
+        </ul>
+        
+        <p>Thank you for choosing our car garage. We look forward to serving you and keeping your car running smoothly.</p>
+    </section>
+
+      <!-- Thank You Section -->
+      <section class="thank-you">
+        <h2>Thank You for Visiting Our Website!</h2>
+        <p>We appreciate your interest in our car services. If you have any questions or need further assistance, please don't hesitate to contact us. We are here to help you with all your car maintenance and repair needs.</p>
+        <p>Have a great day!</p>
+    </section>
+
+    <!-- here is footer -->
+    <footer>
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
+    <script>
+        let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-item');
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
+    }
+    const offset = -currentSlide * 100;
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    showSlide(currentSlide);
+});
+    </script>
+</body>
+</html>
